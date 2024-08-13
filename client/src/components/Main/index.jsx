@@ -3,7 +3,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Dashboard from "../tabs/Dashboard";
 import Home from "../tabs/Home";
 import AddTrainer from "../tabs/AddTrainer";
-import AddGymMember from "../tabs/AddGymMember";
+import AddGymMember from "../tabs/AddGymMember/AddGymMember";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 const Main = () => {

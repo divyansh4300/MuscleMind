@@ -1,0 +1,36 @@
+.form_group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+    font-weight: 600;
+  }
+  
+  .select_field {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .select_field:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .error {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  
