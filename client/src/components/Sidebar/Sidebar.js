@@ -26,7 +26,7 @@ export default function Sidebar({ children }) {
             to={item.path}
             key={index}
             className={styles.link}
-            activeClassName={styles.active}
+            activeclassname={styles.active}
           >
             <div className={styles.icon}>{item.icon}</div>
             <div style={{ display: isOpen ? "block" : "none" }} className={styles.link_text}>{item.name}</div>
