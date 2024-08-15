@@ -1,16 +1,22 @@
 .container {
   display: flex;
 }
+
 main {
   width: 100%;
   padding: 20px;
+  margin-left: 200px; /* Adjust margin to make space for the fixed sidebar */
 }
+
 .sidebar {
   background: #050a24;
   color: #d1d5db;
   height: 100vh;
   width: 200px;
   transition: all 0.5s;
+  position: fixed; /* Make the sidebar sticky */
+  top: 0; /* Stick to the top of the viewport */
+  left: 0; /* Stick to the left side of the viewport */
 }
 
 .top_section {
@@ -18,9 +24,11 @@ main {
   align-items: center;
   padding: 20px 15px;
 }
+
 .logo {
   font-size: 30px;
 }
+
 .bars {
   display: flex;
   font-size: 25px;
@@ -37,15 +45,18 @@ main {
   text-decoration: none;
   align-items: center;
 }
+
 .link:hover {
   background: lightblue;
   color: black;
   transition: all 0.5s;
 }
+
 .active {
   background: lightskyblue;
   color: black;
 }
+
 .icon,
 .link_text {
   font-size: 15px;

@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 export default function Sidebar({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
   return (
     <div className={styles.container}>
       <div
@@ -33,7 +34,9 @@ export default function Sidebar({ children }) {
           </NavLink>
         ))}
       </div>
-      <main>{children}</main>
+      <main style={{ marginLeft: isOpen ? "200px" : "50px" }}>
+        {children}
+      </main>
     </div>
   );
 }
