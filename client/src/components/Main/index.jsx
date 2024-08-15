@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import Sidebar from "../Sidebar/Sidebar";
-import Dashboard from "../tabs/Dashboard";
+import Dashboard from "../tabs/Dashboard/Dashboard";
 import Home from "../tabs/Home";
 import AddTrainer from "../tabs/AddTrainer";
 import AddGymMember from "../tabs/AddGymMember/AddGymMember";

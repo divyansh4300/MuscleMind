@@ -14,7 +14,8 @@ const AddGymMember = () => {
     lastName: "",
     email: "",
     phoneNumber: "",
-    membershipType: "", // Keep empty by default
+    membershipType: "",
+    gender:"", // Keep empty by default
     weight: "",
     userType: "",
     joinDate: "",
@@ -23,6 +24,12 @@ const AddGymMember = () => {
 
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
+      // Calculate validTill based on joinDate and membershipType
+      let validTill = new Date(values.joinDate);
+      if (values.userType === "member" && values.membershipType) {
+        validTill.setDate(validTill.getDate() + parseInt(values.membershipType));
+      }
+
       // Create a new object to avoid sending unnecessary fields
       const memberData = {
         firstName: values.firstName,
@@ -30,15 +37,16 @@ const AddGymMember = () => {
         email: values.email,
         phoneNumber: values.phoneNumber.toString(), // Ensure phoneNumber is treated as a string
         userType: values.userType,
-        
         joinDate: values.joinDate,
         address: values.address,
         weight: values.weight,
+        gender:values.gender,
+        validTill: validTill.toISOString().split("T")[0] // Convert to yyyy-mm-dd format
       };
 
       // Conditionally add membershipType and feeDeposited
       if (values.userType === "member") {
-        memberData.membershipType = values.membershipType;
+        memberData.membershipType = parseInt(values.membershipType); // Convert to Number
         memberData.feeDeposited = values.feeDeposited;
       }
 
@@ -118,10 +126,10 @@ const AddGymMember = () => {
                     label="Membership Type"
                     name="membershipType"
                     options={[
-                      { value: "30", label: "1 Month" },
-                      { value: "90", label: "3 Months" },
-                      { value: "180", label: "6 Months" },
-                      { value: "256", label: "Yearly" },
+                      { value: 30, label: "1 Month" },
+                      { value: 90, label: "3 Months" },
+                      { value: 180, label: "6 Months" },
+                      { value: 256, label: "Yearly" },
                     ]}
                   />
                 </>
